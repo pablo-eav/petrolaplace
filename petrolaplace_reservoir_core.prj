@@ -1,5 +1,5 @@
 <deployment-project plugin="plugin.toolbox" plugin-version="1.0">
-  <configuration file="C:\LyX_Scripts\SCRIPTS_PY\INVERSA_LAPLACE\PETROLAPLACE_RESERVOIR_CORE_GITHUB_REPO\petrolaplace_reservoir_core.prj" location="C:\LyX_Scripts\SCRIPTS_PY\INVERSA_LAPLACE\PETROLAPLACE_RESERVOIR_CORE_GITHUB_REPO" name="petrolaplace_reservoir_core" target="target.toolbox" target-name="Package Toolbox">
+  <configuration file="${PROJECT_ROOT}/petrolaplace_reservoir_core.prj" location="${PROJECT_ROOT}" name="petrolaplace_reservoir_core" target="target.toolbox" target-name="Package Toolbox">
     <param.appname>PetroLaplace Reservoir Core</param.appname>
     <param.authnamewatermark>Prof. Pablo Enrique Aballe Vázquez</param.authnamewatermark>
     <param.email>aballepe61@gmail.com</param.email>
@@ -14,9 +14,9 @@ Key Features:
 - SPE Benchmark Certified: Replicates classic field cases (Bourdet 1989, Cinco-Ley, Warren &amp; Root, Shale MFHW).
 - Complete MATLAB Package (+petrolaplace), Interactive Studio App (PetroLaplaceApp), and C99 Native MEX Acceleration.
 - Built-in 30-Day Evaluation Trial with Cryptographic HMAC Anti-Tamper Licensing.</param.description>
-    <param.screenshot>${PROJECT_ROOT}\petrolaplace_logo.png</param.screenshot>
+    <param.screenshot>${PROJECT_ROOT}/petrolaplace_logo.png</param.screenshot>
     <param.version>1.0.0</param.version>
-    <param.output>${PROJECT_ROOT}\PetroLaplace_Reservoir_Core.mltbx</param.output>
+    <param.output>${PROJECT_ROOT}/PetroLaplace_Reservoir_Core.mltbx</param.output>
     <param.products.name>
       <item>MATLAB</item>
     </param.products.name>
@@ -63,11 +63,11 @@ tests/test_runner*</param.exclude.filters>
 &lt;/examples&gt;</param.examples>
     <param.demosxml />
     <param.apps>
-      <file>${PROJECT_ROOT}\app\PetroLaplaceApp.m</file>
+      <file>${PROJECT_ROOT}/app/PetroLaplaceApp.m</file>
     </param.apps>
     <param.registered.package />
-    <param.docs>${PROJECT_ROOT}\info.xml</param.docs>
-    <param.getting.started.guide>${PROJECT_ROOT}\doc\getting_started.html</param.getting.started.guide>
+    <param.docs>${PROJECT_ROOT}/info.xml</param.docs>
+    <param.getting.started.guide>${PROJECT_ROOT}/doc/getting_started.html</param.getting.started.guide>
     <param.matlabpath.excludes />
     <param.javaclasspath.excludes />
     <param.exported.on.package>true</param.exported.on.package>
@@ -107,44 +107,45 @@ tests/test_runner*</param.exclude.filters>
       <file>${PROJECT_ROOT}</file>
     </fileset.rootdir>
     <fileset.rootfiles>
-      <file>${PROJECT_ROOT}\+petrolaplace</file>
-      <file>${PROJECT_ROOT}\app</file>
-      <file>${PROJECT_ROOT}\data</file>
-      <file>${PROJECT_ROOT}\doc</file>
-      <file>${PROJECT_ROOT}\examples</file>
-      <file>${PROJECT_ROOT}\src</file>
-      <file>${PROJECT_ROOT}\tests</file>
-      <file>${PROJECT_ROOT}\Contents.m</file>
-      <file>${PROJECT_ROOT}\info.xml</file>
-      <file>${PROJECT_ROOT}\LICENSE</file>
-      <file>${PROJECT_ROOT}\README.md</file>
-      <file>${PROJECT_ROOT}\start_toolbox.m</file>
-      <file>${PROJECT_ROOT}\uninstall_toolbox.m</file>
+      <file>${PROJECT_ROOT}/+petrolaplace</file>
+      <file>${PROJECT_ROOT}/app</file>
+      <file>${PROJECT_ROOT}/data</file>
+      <file>${PROJECT_ROOT}/doc</file>
+      <file>${PROJECT_ROOT}/examples</file>
+      <file>${PROJECT_ROOT}/src</file>
+      <file>${PROJECT_ROOT}/tests</file>
+      <file>${PROJECT_ROOT}/Contents.m</file>
+      <file>${PROJECT_ROOT}/info.xml</file>
+      <file>${PROJECT_ROOT}/LICENSE</file>
+      <file>${PROJECT_ROOT}/README.md</file>
+      <file>${PROJECT_ROOT}/petrolaplace_logo.png</file>
+      <file>${PROJECT_ROOT}/start_toolbox.m</file>
+      <file>${PROJECT_ROOT}/uninstall_toolbox.m</file>
     </fileset.rootfiles>
     <fileset.depfun.included />
     <fileset.depfun.excluded />
     <fileset.package />
     <build-deliverables>
-      <file location="${PROJECT_ROOT}" name="PetroLaplace_Reservoir_Core.mltbx" optional="false">${PROJECT_ROOT}\PetroLaplace_Reservoir_Core.mltbx</file>
+      <file location="${PROJECT_ROOT}" name="PetroLaplace_Reservoir_Core.mltbx" optional="false">${PROJECT_ROOT}/PetroLaplace_Reservoir_Core.mltbx</file>
     </build-deliverables>
     <workflow />
     <matlab>
-      <root>C:\Program Files\MATLAB</root>
+      <root></root>
       <toolboxes />
     </matlab>
     <platform>
-      <unix>false</unix>
-      <mac>false</mac>
+      <unix>true</unix>
+      <mac>true</mac>
       <windows>true</windows>
       <win2k>false</win2k>
       <winxp>false</winxp>
       <vista>false</vista>
-      <linux>false</linux>
+      <linux>true</linux>
       <solaris>false</solaris>
       <osver>10.0</osver>
       <os32>false</os32>
       <os64>true</os64>
-      <arch>win64</arch>
+      <arch>generic</arch>
       <matlab>true</matlab>
     </platform>
   </configuration>
