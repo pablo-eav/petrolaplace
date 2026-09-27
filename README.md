@@ -243,10 +243,35 @@ PetroLaplace™ Reservoir Core implements enterprise-grade multi-layer protectio
 
 ---
 
-## ⚖️ Licensing & Commercial Terms
+## ⚖️ Commercial Subscriptions & Store (Lemon Squeezy)
 
-* **Evaluation & Academic Trial:** 30-day automatic trial included. Free academic research licenses available upon application.
-* **Commercial Enterprise License:** For perpetual/annual production licenses, field telemetry integrations, and SCADA firmware deployment, visit the [MathWorks Connections Program](https://www.mathworks.com/products/connections.html) or contact the author.
+PetroLaplace™ includes an **automatic 30-day full-featured evaluation trial** upon installation.
+
+To acquire an annual subscription or perpetual license key, visit the official store:
+👉 **[PetroLaplace Official Store (Lemon Squeezy)](https://rootfreelaplace.lemonsqueezy.com)**
+
+### Licensing Plans & Tiers
+
+| License Tier | Annual Fee | Target Audience | Key Features Included |
+| :--- | :---: | :--- | :--- |
+| **🎓 Academic & Student** | **49 € / year** | Undergraduate, Master's, PhD students, and university research labs. | Full MATLAB Toolbox (`+petrolaplace`), interactive App (`PetroLaplaceApp`), SPE verification benchmarks. |
+| **💼 Professional Consultant** | **349 € / year** | Independent reservoir engineers, well-test analysts, and petroleum consulting firms. | Single-seat commercial license, continuous Bourdet derivative, fast Toeplitz deconvolution, priority updates. |
+| **🏢 Enterprise & Corporate** | **1,190 € / year** | E&P operators, field service companies, and reservoir characterization teams. | Multi-seat license (up to 5 workstations), high-performance C99 engine, direct technical support. |
+| **🔒 Perpetual Air-Gap (Optional)** | **890 € (One-time)** | Field engineers and offline workstations without annual recurring subscriptions. | Permanent commercial activation, lifetime usage on designated hardware. |
+
+### Activation in MATLAB
+
+Once you receive your license key from Lemon Squeezy, activate it in your MATLAB command window:
+
+```matlab
+% Activate license
+petrolaplace.activate('PETRO-PRO-XXXX-XXXX-XXXX-XXXX', 'engineer@company.com');
+
+% Verify status and days remaining
+petrolaplace.license_status;
+```
+
+---
 
 **Author & Creator:** Pablo Enrique Aballe  
-**Copyright:** © 2026 Pablo Enrique Aballe. Registered in Safe Creative & Autonomous Intellectual Property Registry.
+**Copyright:** © 2026 Pablo Enrique Aballe. Registered in Safe Creative & Autonomous Intellectual Property Registry. All rights reserved.
