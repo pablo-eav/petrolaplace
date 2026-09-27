@@ -36,7 +36,8 @@ ci_workflows
 *.asv
 *.bak
 *.tmp
-tests/test_runner*</param.exclude.filters>
+tests/test_runner*
+*.dll</param.exclude.filters>
     <param.exclude.pcodedmfiles>true</param.exclude.pcodedmfiles>
     <param.examples>&lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;examples&gt;
