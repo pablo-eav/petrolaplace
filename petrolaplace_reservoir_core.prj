@@ -1,0 +1,151 @@
+<deployment-project plugin="plugin.toolbox" plugin-version="1.0">
+  <configuration file="C:\LyX_Scripts\SCRIPTS_PY\INVERSA_LAPLACE\PETROLAPLACE_RESERVOIR_CORE_GITHUB_REPO\petrolaplace_reservoir_core.prj" location="C:\LyX_Scripts\SCRIPTS_PY\INVERSA_LAPLACE\PETROLAPLACE_RESERVOIR_CORE_GITHUB_REPO" name="petrolaplace_reservoir_core" target="target.toolbox" target-name="Package Toolbox">
+    <param.appname>PetroLaplace Reservoir Core</param.appname>
+    <param.authnamewatermark>Prof. Pablo Enrique Aballe Vázquez</param.authnamewatermark>
+    <param.email>aballepe61@gmail.com</param.email>
+    <param.company>Instituto Internacional de Investigación Laplace</param.company>
+    <param.summary>Advanced Well Test Analysis &amp; Non-Iterative Deconvolution Toolbox for Reservoir Engineering.</param.summary>
+    <param.description>PetroLaplace™ Reservoir Core: Advanced Well Test &amp; Deconvolution Toolbox.
+
+Key Features:
+- 100% Root-Free &amp; Stehfest-Divergence Free: Conformal Talbot complex contour integration eliminating Runge oscillations in wellbore storage.
+- Infinitesimal Bourdet Derivative: Evaluates continuous logarithmic derivative directly in the complex domain without numerical differencing noise.
+- Non-Iterative Toeplitz-Tikhonov Deconvolution: Reconstructs constant-rate drawdown responses from variable-rate production histories in &lt; 2 ms.
+- SPE Benchmark Certified: Replicates classic field cases (Bourdet 1989, Cinco-Ley, Warren &amp; Root, Shale MFHW).
+- Complete MATLAB Package (+petrolaplace), Interactive Studio App (PetroLaplaceApp), and C99 Native MEX Acceleration.
+- Built-in 30-Day Evaluation Trial with Cryptographic HMAC Anti-Tamper Licensing.</param.description>
+    <param.screenshot>${PROJECT_ROOT}\doc\getting_started.html</param.screenshot>
+    <param.version>1.0.0</param.version>
+    <param.output>${PROJECT_ROOT}\PetroLaplace_Reservoir_Core.mltbx</param.output>
+    <param.products.name>
+      <item>MATLAB</item>
+    </param.products.name>
+    <param.products.id>
+      <item>1</item>
+    </param.products.id>
+    <param.products.version>
+      <item>9.8</item>
+    </param.products.version>
+    <param.platforms />
+    <param.guid>d5e8a1b2-c3f4-4e5a-8b9c-0d1e2f3a4b5c</param.guid>
+    <param.exclude.filters>% List of paths to exclude from packaging
+.git
+.gitignore
+.gitattributes
+ci_workflows
+*.asv
+*.bak
+*.tmp
+tests/test_runner*</param.exclude.filters>
+    <param.exclude.pcodedmfiles>false</param.exclude.pcodedmfiles>
+    <param.examples>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;examples&gt;
+   &lt;exampleData&gt;
+      &lt;name&gt;ex01_bourdet_storage_skin&lt;/name&gt;
+      &lt;type&gt;m&lt;/type&gt;
+      &lt;file&gt;examples/ex01_bourdet_storage_skin.m&lt;/file&gt;
+   &lt;/exampleData&gt;
+   &lt;exampleData&gt;
+      &lt;name&gt;ex02_warren_root_carbonate&lt;/name&gt;
+      &lt;type&gt;m&lt;/type&gt;
+      &lt;file&gt;examples/ex02_warren_root_carbonate.m&lt;/file&gt;
+   &lt;/exampleData&gt;
+   &lt;exampleData&gt;
+      &lt;name&gt;ex03_shale_horizontal_mfhw&lt;/name&gt;
+      &lt;type&gt;m&lt;/type&gt;
+      &lt;file&gt;examples/ex03_shale_horizontal_mfhw.m&lt;/file&gt;
+   &lt;/exampleData&gt;
+   &lt;exampleData&gt;
+      &lt;name&gt;ex04_multirate_deconvolution&lt;/name&gt;
+      &lt;type&gt;m&lt;/type&gt;
+      &lt;file&gt;examples/ex04_multirate_deconvolution.m&lt;/file&gt;
+   &lt;/exampleData&gt;
+&lt;/examples&gt;</param.examples>
+    <param.demosxml />
+    <param.apps>
+      <file>${PROJECT_ROOT}\app\PetroLaplaceApp.m</file>
+    </param.apps>
+    <param.registered.package />
+    <param.docs>${PROJECT_ROOT}\info.xml</param.docs>
+    <param.getting.started.guide>${PROJECT_ROOT}\doc\getting_started.html</param.getting.started.guide>
+    <param.matlabpath.excludes />
+    <param.javaclasspath.excludes />
+    <param.exported.on.package>true</param.exported.on.package>
+    <param.required.addons />
+    <param.matlab.project.id />
+    <param.matlab.project.name />
+    <param.release.start>R2020a</param.release.start>
+    <param.release.end>latest</param.release.end>
+    <param.release.current.only>false</param.release.current.only>
+    <param.compatiblity.windows>true</param.compatiblity.windows>
+    <param.compatiblity.macos>true</param.compatiblity.macos>
+    <param.compatiblity.linux>true</param.compatiblity.linux>
+    <param.compatiblity.matlabonline>true</param.compatiblity.matlabonline>
+    <param.installation.map />
+    <param.additional.sw.names />
+    <param.additional.sw.licenses />
+    <param.additional.sw.win.url />
+    <param.additional.sw.mac.url />
+    <param.additional.sw.linux.url />
+    <unset>
+      <param.platforms />
+      <param.demosxml />
+      <param.registered.package />
+      <param.matlabpath.excludes />
+      <param.javaclasspath.excludes />
+      <param.required.addons />
+      <param.matlab.project.id />
+      <param.matlab.project.name />
+      <param.installation.map />
+      <param.additional.sw.names />
+      <param.additional.sw.licenses />
+      <param.additional.sw.win.url />
+      <param.additional.sw.mac.url />
+      <param.additional.sw.linux.url />
+    </unset>
+    <fileset.rootdir>
+      <file>${PROJECT_ROOT}</file>
+    </fileset.rootdir>
+    <fileset.rootfiles>
+      <file>${PROJECT_ROOT}\+petrolaplace</file>
+      <file>${PROJECT_ROOT}\app</file>
+      <file>${PROJECT_ROOT}\data</file>
+      <file>${PROJECT_ROOT}\doc</file>
+      <file>${PROJECT_ROOT}\examples</file>
+      <file>${PROJECT_ROOT}\src</file>
+      <file>${PROJECT_ROOT}\tests</file>
+      <file>${PROJECT_ROOT}\Contents.m</file>
+      <file>${PROJECT_ROOT}\info.xml</file>
+      <file>${PROJECT_ROOT}\LICENSE</file>
+      <file>${PROJECT_ROOT}\README.md</file>
+      <file>${PROJECT_ROOT}\start_toolbox.m</file>
+      <file>${PROJECT_ROOT}\uninstall_toolbox.m</file>
+    </fileset.rootfiles>
+    <fileset.depfun.included />
+    <fileset.depfun.excluded />
+    <fileset.package />
+    <build-deliverables>
+      <file location="${PROJECT_ROOT}" name="PetroLaplace_Reservoir_Core.mltbx" optional="false">${PROJECT_ROOT}\PetroLaplace_Reservoir_Core.mltbx</file>
+    </build-deliverables>
+    <workflow />
+    <matlab>
+      <root>C:\Program Files\MATLAB</root>
+      <toolboxes />
+    </matlab>
+    <platform>
+      <unix>false</unix>
+      <mac>false</mac>
+      <windows>true</windows>
+      <win2k>false</win2k>
+      <winxp>false</winxp>
+      <vista>false</vista>
+      <linux>false</linux>
+      <solaris>false</solaris>
+      <osver>10.0</osver>
+      <os32>false</os32>
+      <os64>true</os64>
+      <arch>win64</arch>
+      <matlab>true</matlab>
+    </platform>
+  </configuration>
+</deployment-project>
