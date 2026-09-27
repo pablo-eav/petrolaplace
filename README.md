@@ -1,6 +1,10 @@
 # PetroLaplace™ Reservoir Core
 ### Advanced Well Test & Deconvolution Toolbox for MATLAB & Python
 
+<p align="center">
+  <img src="petrolaplace_logo.png" alt="PetroLaplace Reservoir Core Logo" width="380">
+</p>
+
 [![MATLAB](https://img.shields.io/badge/MATLAB-R2020a--R2026%2B-blue.svg)](https://www.mathworks.com/products/matlab.html)
 [![MathWorks Connections](https://img.shields.io/badge/MathWorks-Connections_Program_Candidate-orange.svg)](https://www.mathworks.com/products/connections.html)
 [![Language-C99](https://img.shields.io/badge/Kernel-MISRA_C99-brightgreen.svg)](#c99-kernel)

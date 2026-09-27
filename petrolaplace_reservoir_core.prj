@@ -14,7 +14,7 @@ Key Features:
 - SPE Benchmark Certified: Replicates classic field cases (Bourdet 1989, Cinco-Ley, Warren &amp; Root, Shale MFHW).
 - Complete MATLAB Package (+petrolaplace), Interactive Studio App (PetroLaplaceApp), and C99 Native MEX Acceleration.
 - Built-in 30-Day Evaluation Trial with Cryptographic HMAC Anti-Tamper Licensing.</param.description>
-    <param.screenshot>${PROJECT_ROOT}\doc\getting_started.html</param.screenshot>
+    <param.screenshot>${PROJECT_ROOT}\petrolaplace_logo.png</param.screenshot>
     <param.version>1.0.0</param.version>
     <param.output>${PROJECT_ROOT}\PetroLaplace_Reservoir_Core.mltbx</param.output>
     <param.products.name>
