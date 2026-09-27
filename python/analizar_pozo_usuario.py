@@ -385,14 +385,20 @@ def seleccionar_archivo_interactivo(titulo="Seleccione archivo", filtro=None):
         return None
 
 if __name__ == "__main__":
-    directorio_actual = os.path.dirname(os.path.abspath(__file__))
+    import argparse
+    parser = argparse.ArgumentParser(description="PetroLaplace™ Reservoir Core: Análisis Diagnóstico Automatizado de Pozos")
+    parser.add_argument("csv_pos", nargs="?", default=None, help="Ruta al archivo CSV/TXT con los datos del pozo")
+    parser.add_argument("json_pos", nargs="?", default=None, help="Ruta al archivo JSON con las propiedades petrofísicas")
+    parser.add_argument("--csv", dest="csv_flag", default=None, help="Ruta al archivo CSV/TXT con los datos del pozo")
+    parser.add_argument("--props", dest="json_flag", default=None, help="Ruta al archivo JSON con las propiedades")
+    parser.add_argument("--gui", "--dialog", action="store_true", dest="usar_gui", help="Abrir selector interactivo de archivos")
     
-    # Modo interactivo con ventana gráfica si se pasa --gui o --dialog
-    usar_gui = "--gui" in sys.argv or "--dialog" in sys.argv
-    args_limpios = [a for a in sys.argv[1:] if a not in ("--gui", "--dialog")]
+    parsed = parser.parse_args()
+    usar_gui = parsed.usar_gui
     
-    # 1. Archivo de datos CSV
-    if usar_gui and len(args_limpios) == 0:
+    # Resolver ruta de datos CSV
+    archivo_datos = parsed.csv_flag or parsed.csv_pos
+    if not archivo_datos and usar_gui:
         print("[INTERACTIVO] Seleccione el archivo CSV con los datos de presión del pozo...")
         archivo_datos = seleccionar_archivo_interactivo(
             "Seleccione Registro de Presión (CSV / TXT)",
@@ -401,30 +407,40 @@ if __name__ == "__main__":
         if not archivo_datos:
             print("[INFO] Operación cancelada por el usuario.")
             sys.exit(0)
-    elif len(args_limpios) > 0:
-        archivo_datos = os.path.abspath(args_limpios[0])
-    else:
-        archivo_datos = os.path.join(directorio_actual, "datos_pozo_ejemplo.csv")
-        
-    # 2. Archivo de propiedades JSON
-    archivo_json = None
-    if usar_gui and len(args_limpios) <= 1:
-        # Preguntar si desea seleccionar JSON o usar el predeterminado
-        candidato_json = os.path.join(directorio_actual, "propiedades_pozo.json")
-        if not os.path.exists(candidato_json):
+    elif not archivo_datos:
+        candidatos = [
+            os.path.join(directorio_actual, "datos_pozo_ejemplo.csv"),
+            os.path.join(directorio_actual, "..", "data", "datos_pozo_ejemplo.csv")
+        ]
+        archivo_datos = next((c for c in candidatos if os.path.exists(c)), candidatos[0])
+    
+    archivo_datos = os.path.abspath(archivo_datos)
+    
+    # Resolver ruta de propiedades JSON
+    archivo_json = parsed.json_flag or parsed.json_pos
+    if not archivo_json and usar_gui:
+        candidatos_json = [
+            os.path.join(directorio_actual, "propiedades_pozo.json"),
+            os.path.join(directorio_actual, "..", "data", "propiedades_pozo.json")
+        ]
+        candidato_json = next((c for c in candidatos_json if os.path.exists(c)), None)
+        if not candidato_json:
             archivo_json = seleccionar_archivo_interactivo(
                 "Seleccione Archivo de Propiedades del Yacimiento (JSON opcional)",
                 [("Archivos JSON", "*.json"), ("Todos", "*.*")]
             )
         else:
             archivo_json = candidato_json
-    elif len(args_limpios) > 1:
-        archivo_json = os.path.abspath(args_limpios[1])
-    else:
-        candidato_json = os.path.join(directorio_actual, "propiedades_pozo.json")
-        if os.path.exists(candidato_json):
-            archivo_json = candidato_json
-            
+    elif not archivo_json:
+        candidatos_json = [
+            os.path.join(directorio_actual, "propiedades_pozo.json"),
+            os.path.join(directorio_actual, "..", "data", "propiedades_pozo.json")
+        ]
+        archivo_json = next((c for c in candidatos_json if os.path.exists(c)), None)
+        
+    if archivo_json:
+        archivo_json = os.path.abspath(archivo_json)
+        
     # Cargar desde JSON o usar diccionario por defecto
     propiedades_cargadas = cargar_propiedades_json(archivo_json) if archivo_json else None
     

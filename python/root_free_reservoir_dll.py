@@ -45,10 +45,19 @@ class RootFreeReservoirDLL:
             else: # Linux / Unix
                 candidates = ["libroot_free_reservoir_core.so", "root_free_reservoir_core.so"]
             
-            for c in candidates:
-                p = os.path.join(base_dir, c)
-                if os.path.exists(p):
-                    dll_path = p
+            search_dirs = [
+                base_dir,
+                os.path.join(base_dir, "..", "src"),
+                os.path.join(base_dir, "src"),
+                os.getcwd()
+            ]
+            for s_dir in search_dirs:
+                for c in candidates:
+                    p = os.path.normpath(os.path.join(s_dir, c))
+                    if os.path.exists(p):
+                        dll_path = p
+                        break
+                if dll_path is not None:
                     break
             
             if dll_path is None or not os.path.exists(dll_path):
