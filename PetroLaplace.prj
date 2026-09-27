@@ -37,7 +37,10 @@ ci_workflows
 *.bak
 *.tmp
 tests/test_runner*
-*.dll</param.exclude.filters>
+*.dll
+*.mex*
+*.pyc
+__pycache__</param.exclude.filters>
     <param.exclude.pcodedmfiles>true</param.exclude.pcodedmfiles>
     <param.examples>&lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;examples&gt;
