@@ -33,7 +33,7 @@ fprintf('1. Configuring Toolbox Metadata...\n');
 opts = matlab.addons.toolbox.ToolboxOptions(toolbox_root, uuid_str);
 
 opts.ToolboxName = 'PetroLaplace Reservoir Core';
-opts.ToolboxVersion = '1.0.1';
+opts.ToolboxVersion = '1.0.2';
 opts.AuthorName = 'Prof. Pablo Enrique Aballe Vázquez';
 opts.AuthorEmail = 'support@laplace-rootfree.org';
 
