@@ -12,6 +12,7 @@
 *.mexa64
 *.mexmaci64
 *.mexmaca64
+!+petrolaplace/*.mex*
 *.mlappinstall
 *.mltbx_temp/
 matlab.log
@@ -23,6 +24,7 @@ matlab.log
 *.exp
 *.exe
 *.dll
+!src/root_free_reservoir_core.dll
 *.so
 *.dylib
 *.pdb

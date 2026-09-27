@@ -1,5 +1,5 @@
 % PETROLAPLACE RESERVOIR CORE TOOLBOX
-% Version 1.0.3 (R2024b) 27-Sep-2026
+% Version 1.0.4 (R2024b) 27-Sep-2026
 %
 % High-Performance Numerical Laplace Inversion and Pressure Transient
 % Analysis (PTA) Engine for Petroleum Reservoir Engineering.

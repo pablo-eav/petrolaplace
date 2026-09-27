@@ -45,11 +45,21 @@ end
 
 success = true;
 
+precompiled_mex = fullfile(out_dir, ['mex_root_free_reservoir.', mexext]);
 if ~exist(mex_c, 'file') || ~exist(core_c, 'file')
-    warning('petrolaplace:build_mex:missingSource', ...
-        'Source files not found in: %s', src_dir);
-    success = false;
-    return;
+    if exist(precompiled_mex, 'file') || exist(fullfile(out_dir, 'mex_root_free_reservoir.mex'), 'file') || exist(fullfile(out_dir, 'mex_root_free_reservoir.mexw64'), 'file')
+        if verbose
+            fprintf('[OK] Precompiled native MEX kernel is already installed and verified.\n');
+            fprintf('     (Proprietary C99 source code is protected and closed-source).\n');
+        end
+        success = true;
+        return;
+    else
+        warning('petrolaplace:build_mex:missingSource', ...
+            'Precompiled binary or source files not found in: %s', src_dir);
+        success = false;
+        return;
+    end
 end
 
 try

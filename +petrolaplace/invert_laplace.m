@@ -86,7 +86,7 @@ for j = 1:n_t
     w_0 = 0.5 * ds_0 * exp(s_0_base) * F_0;
     
     sum_nodes = w_0 + sum(integrand);
-    p_t(j) = (1.0 / pi) * imag(sum_nodes);
+    p_t(j) = (1.0 / M) * imag(sum_nodes);
     
     % Analytical Bourdet logarithmic derivative via complex Cauchy contour
     if calc_deriv
@@ -98,9 +98,9 @@ for j = 1:n_t
         inv_tp = 1.0 / t_plus;
         inv_tm = 1.0 / t_minus;
         
-        p_plus  = (1.0 / pi) * imag(0.5*ds_0_base*inv_tp*exp(s_0_base)*model_func(s_0_base*inv_tp) + ...
+        p_plus  = (1.0 / M) * imag(0.5*ds_0_base*inv_tp*exp(s_0_base)*model_func(s_0_base*inv_tp) + ...
                   sum((ds_base*inv_tp) .* exp(s_base) .* model_func(s_base*inv_tp)));
-        p_minus = (1.0 / pi) * imag(0.5*ds_0_base*inv_tm*exp(s_0_base)*model_func(s_0_base*inv_tm) + ...
+        p_minus = (1.0 / M) * imag(0.5*ds_0_base*inv_tm*exp(s_0_base)*model_func(s_0_base*inv_tm) + ...
                   sum((ds_base*inv_tm) .* exp(s_base) .* model_func(s_base*inv_tm)));
               
         dp_t(j) = (p_plus - p_minus) / (2.0 * delta);

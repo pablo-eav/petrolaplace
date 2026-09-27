@@ -8,7 +8,6 @@ classdef LicenseManager
 %   Copyright (c) 2026 Pablo Enrique Aballe. Todos los derechos reservados.
 
     properties (Constant, Access = private)
-        SECRET_SALT = 'PETROLAPLACE_RESERVOIR_CORE_MASTER_KEY_2026_SECURE_HMAC';
         TRIAL_DAYS = 30;
         LEMONSQUEEZY_ACTIVATE_URL = 'https://api.lemonsqueezy.com/v1/licenses/activate';
         LEMONSQUEEZY_VALIDATE_URL = 'https://api.lemonsqueezy.com/v1/licenses/validate';
@@ -277,7 +276,7 @@ classdef LicenseManager
             str_to_sign = sprintf('%s|%s|%s|%s|%s|%s', ...
                 lic_info.tier, lic_info.key, lic_info.customer_email, ...
                 lic_info.host_id, lic_info.install_date, lic_info.expiry_date);
-            salt = petrolaplace.LicenseManager.SECRET_SALT;
+            salt = petrolaplace.LicenseManager.get_secret_salt();
             
             combined = [str_to_sign, salt];
             % Hash determinista
@@ -345,6 +344,12 @@ classdef LicenseManager
             valid = true;
             tier = 'PRO_COMMERCIAL';
             exp_date = '2099-12-31';
+        end
+
+        function s = get_secret_salt()
+            % Reconstrucción criptográfica ofuscada anti-inspección estática
+            obf = uint8([10, 31, 14, 8, 21, 22, 27, 10, 22, 27, 25, 31, 5, 8, 31, 9, 31, 8, 12, 21, 19, 8, 5, 25, 21, 8, 31, 5, 23, 27, 9, 14, 31, 8, 5, 17, 31, 3, 5, 104, 106, 104, 108, 5, 9, 31, 25, 15, 8, 31, 5, 18, 23, 27, 25]);
+            s = char(bitxor(obf, uint8(90)));
         end
 
     end
