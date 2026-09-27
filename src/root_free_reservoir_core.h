@@ -20,7 +20,9 @@ extern "C" {
 #include <stddef.h>
 
 #if defined(_WIN32) || defined(_WIN64)
-    #ifdef ROOTFREE_EXPORTS
+    #if defined(ROOTFREE_STATIC)
+        #define ROOTFREE_API
+    #elif defined(ROOTFREE_EXPORTS)
         #define ROOTFREE_API __declspec(dllexport)
     #else
         #define ROOTFREE_API __declspec(dllimport)

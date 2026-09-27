@@ -22,6 +22,16 @@ if nargin < 3 || isempty(M)
     M = 32;
 end
 
+% Verificación de licencia activa (Trial 30 días o Comercial)
+petrolaplace.LicenseManager.verify();
+
+% Soporte flexible para ambos órdenes de argumentos: (t, F_s) o (F_s, t)
+if isa(t_span, 'function_handle')
+    tmp_f = t_span;
+    t_span = model_func;
+    model_func = tmp_f;
+end
+
 t_span = t_span(:)';
 n_t = length(t_span);
 p_t = zeros(1, n_t);

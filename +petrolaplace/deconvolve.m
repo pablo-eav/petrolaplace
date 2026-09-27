@@ -29,6 +29,9 @@ if nargin < 4 || isempty(lambda_reg)
     lambda_reg = 1e-3;
 end
 
+% Verificación de licencia activa (Trial 30 días o Comercial)
+petrolaplace.LicenseManager.verify();
+
 t_span = t_span(:);
 q_history = q_history(:);
 p_measured = p_measured(:);

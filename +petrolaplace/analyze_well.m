@@ -38,6 +38,9 @@ if nargin < 4 || isempty(plot_diag)
     plot_diag = true;
 end
 
+% Verificación de licencia activa (Trial 30 días o Comercial)
+petrolaplace.LicenseManager.verify();
+
 t_hr = t_hr(:);
 p_wf = p_wf(:);
 

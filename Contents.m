@@ -13,10 +13,13 @@
 %   petrolaplace.bourdet_derivative       - Smooth infinitesimal logarithmic Bourdet derivative.
 %   petrolaplace.analyze_well             - Complete automated well test analysis workflow.
 %   petrolaplace.model_radial_storage_skin - Standard vertical well with storage and skin.
+%   petrolaplace.activate                 - Activate commercial/academic license key.
+%   petrolaplace.license_status           - Query active license status, trial days, and Host ID.
 %
 % Build and Packaging Utilities:
 %   build_mex                             - Compiles the native C99 computational kernels to MEX.
 %   build_mltbx                           - Packages the toolbox into an official MATLAB .mltbx Add-On.
+%   build_protected_toolbox               - Generates encrypted P-code (.p) distribution and protected .mltbx.
 %   start_toolbox                         - Adds toolbox paths and verifies installation.
 %   uninstall_toolbox                     - Removes toolbox paths from MATLAB environment.
 %

@@ -7,4 +7,9 @@
 %   model_radial_storage_skin - Standard vertical well with storage and skin.
 %   analyze_well              - End-to-end automated PTA analysis workflow.
 %
-% Copyright (c) 2026 Prof. Pablo Enrique Aballe Vázquez.
+% Licensing & IP Protection:
+%   activate                  - Activate a commercial or academic product key.
+%   license_status            - Query active license tier, trial days, and Host ID.
+%   LicenseManager            - Cryptographic HMAC anti-tamper licensing system.
+%
+% Copyright (c) 2026 Pablo Enrique Aballe. All rights reserved.

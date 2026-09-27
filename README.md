@@ -211,10 +211,38 @@ If you use PetroLaplace™ in academic research, thesis projects, or commercial 
 
 ---
 
+## 🔒 Intellectual Property (IP) Protection & Cryptographic Licensing
+
+PetroLaplace™ Reservoir Core implements enterprise-grade multi-layer protection for commercial distribution:
+
+1. **Cryptographic Anti-Tampering (`+petrolaplace/LicenseManager.m`)**:
+   * **30-Day Automatic Evaluation Trial:** Users cloning the repo or installing via MATLAB Add-On Explorer can test the entire toolbox free for 30 days.
+   * **Hardware-Bound Host ID:** Binds licenses to unique workstation hardware fingerprints (Motherboard UUID / Machine GUID / MAC).
+   * **Clock-Tamper Detection:** Prevents system date rollbacks.
+   * **HMAC Cryptographic Signature:** Detects manual tampering or modification of license files.
+   * **Activation Interface:**
+     ```matlab
+     % Activate with product key
+     petrolaplace.activate('PETRO-COMMERCIAL-KEY-...');
+
+     % Check current license status and days left
+     petrolaplace.license_status;
+     ```
+
+2. **MATLAB P-Code Obfuscation & Binary Distribution**:
+   * Execute `build_protected_toolbox` to generate encrypted MATLAB P-Code (`.p`) files.
+   * `.m` files in protected distributions serve strictly as signature/help documentation stubs, completely hiding formulas and algorithms.
+
+3. **Closed-Source Native C99 Engine & Precompiled Binaries**:
+   * Precompiled native libraries for Windows (`.dll`), Linux (`.so`), macOS (`.dylib`), and MATLAB (`.mexw64`).
+   * Clean public C interface in [src/root_free_reservoir_core.h](src/root_free_reservoir_core.h).
+
+---
+
 ## ⚖️ Licensing & Commercial Terms
 
-* **Academic & Evaluation License:** Free for educational and non-commercial research use under the terms of the MIT-compatible open assessment license included in [LICENSE](LICENSE).
-* **Commercial Enterprise License:** For integration into commercial software suites, SCADA systems, downhole memory gauge firmware, or proprietary cloud telemetry platforms, contact the author for enterprise licensing and hardware IP-core licensing.
+* **Evaluation & Academic Trial:** 30-day automatic trial included. Free academic research licenses available upon application.
+* **Commercial Enterprise License:** For perpetual/annual production licenses, field telemetry integrations, and SCADA firmware deployment, visit the [MathWorks Connections Program](https://www.mathworks.com/products/connections.html) or contact the author.
 
 **Author & Creator:** Pablo Enrique Aballe  
 **Copyright:** © 2026 Pablo Enrique Aballe. Registered in Safe Creative & Autonomous Intellectual Property Registry.
