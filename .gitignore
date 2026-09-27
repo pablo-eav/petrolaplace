@@ -1,0 +1,75 @@
+# ==============================================================================
+# .gitignore for PetroLaplace Reservoir Core (MATLAB, Python, C99, OS)
+# ==============================================================================
+
+# --- MATLAB artifacts ---
+*.asv
+*.slxc
+*.m~
+*.mat
+*.mexw32
+*.mexw64
+*.mexa64
+*.mexmaci64
+*.mexmaca64
+*.mlappinstall
+*.mltbx_temp/
+matlab.log
+
+# --- C99 Compilation & Binaries ---
+*.obj
+*.o
+*.lib
+*.exp
+*.exe
+*.dll
+*.so
+*.dylib
+*.pdb
+*.ilk
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# --- LaTeX & Logs ---
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+
+# --- Operating System Artifacts ---
+.DS_Store
+Thumbs.db
+ehthumbs.db
+[Nn]otebooks/.ipynb_checkpoints
+
+# --- IDEs ---
+.vscode/
+.idea/
+*.swp
+*.swo

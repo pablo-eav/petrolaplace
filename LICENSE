@@ -1,0 +1,43 @@
+PETROLAPLACE RESERVOIR CORE SOFTWARE LICENSE AGREEMENT
+==============================================================================
+Copyright (c) 2026 Prof. Pablo Enrique Aballe Vázquez
+Instituto Internacional de Investigación en Física Matemática y Aeroespacial Laplace
+Todos los derechos reservados. All Rights Reserved.
+==============================================================================
+
+Proprietary Software and Scientific Intellectual Property Notice:
+
+1. DEFINITIONS AND OWNERSHIP:
+   "PetroLaplace™ Reservoir Core: Advanced Well Test & Deconvolution Toolbox" (including 
+   its mathematical algorithms, native C99 source code, Python bindings, MATLAB MEX gateways, 
+   documentation, and associated benchmark datasets) is the exclusive intellectual property of 
+   Prof. Pablo Enrique Aballe Vázquez.
+
+   The software and its underlying mathematical formulation are registered and protected 
+   under international copyright laws, the Berne Convention for the Protection of Literary 
+   and Artistic Works, the World Intellectual Property Organization (WIPO/OMPI), Safe Creative, 
+   and national intellectual property registries.
+
+2. EVALUATION AND ACADEMIC USE:
+   Permission is hereby granted, free of charge, to any person obtaining a copy of this 
+   software and associated documentation files, to inspect, evaluate, and perform non-commercial 
+   academic research and educational benchmarking, subject to the following conditions:
+   a) The above copyright notice and this permission notice shall be included in all copies 
+      or substantial portions of the Software.
+   b) Any academic publication or technical report derived from the use of this software 
+      MUST formally cite the author and the official Society of Petroleum Engineers (SPE) 
+      reference paper as specified in CITATION.cff.
+
+3. COMMERCIAL USE AND OEM LICENSING:
+   Commercial exploitation, deployment in oilfield production platforms, integration into 
+   downhole electronic tools (BHP gauges/RTUs), commercial well testing consulting, or 
+   resale as part of enterprise suites requires a valid Commercial Software License Agreement 
+   issued directly by the author or authorized distributors under the MathWorks Connections Program.
+
+4. DISCLAIMER OF WARRANTY:
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+   INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR 
+   PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE 
+   FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR 
+   OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
+   DEALINGS IN THE SOFTWARE.

@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "If you use this software in academic research or technical reservoir evaluation, please cite it as below."
+title: "PetroLaplace Reservoir Core: Advanced Well Test & Deconvolution Toolbox"
+abstract: "Deterministic complex-plane conformal Laplace inversion and Toeplitz-Tikhonov deconvolution engine in C99, Python, and MATLAB for Pressure Transient Analysis (PTA) in oil and gas reservoirs, superseding the 1970 Stehfest algorithm."
+authors:
+  - family-names: "Aballe Vázquez"
+    given-names: "Pablo Enrique"
+    affiliation: "Instituto Internacional de Investigación en Física Matemática y Aeroespacial Laplace"
+version: 1.0.0
+date-released: 2026-09-27
+url: "https://github.com/pablo-aballe/petrolaplace-reservoir-core"
+keywords:
+  - "pressure-transient-analysis"
+  - "well-testing"
+  - "deconvolution"
+  - "reservoir-engineering"
+  - "laplace-transform"
+  - "talbot-contour"
+  - "bourdet-derivative"
+  - "stehfest-algorithm"
+  - "matlab-toolbox"
+  - "petroleum-engineering"
+license: "Proprietary"
+preferred-citation:
+  type: article
+  authors:
+    - family-names: "Aballe Vázquez"
+      given-names: "Pablo Enrique"
+  title: "Deterministic Complex-Contour Laplace Inversion and High-Performance Deconvolution for Well-Test Analysis in Unconventional Reservoirs: Eliminating the Stehfest Numerical Collapse"
+  journal: "Society of Petroleum Engineers (SPE) Technical Paper Series"
+  year: 2026
+  month: 9

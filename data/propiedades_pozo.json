@@ -1,0 +1,16 @@
+{
+  "pozo_id": "EXPLORACION-NORTE-X1",
+  "yacimiento": "Formación Areniscas Superiores",
+  "comentarios": "Parámetros petrofísicos y PVT validados de laboratorio y registros de pozo",
+  "propiedades_pvt": {
+    "P_i": 3850.0,
+    "q_stbd": 180.0,
+    "h": 45.0,
+    "phi": 0.18,
+    "mu": 1.25,
+    "c_t": 1.4e-5,
+    "B_o": 1.22,
+    "r_w": 0.35,
+    "L_factor": 0.15
+  }
+}

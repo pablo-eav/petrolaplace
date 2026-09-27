@@ -1,0 +1,28 @@
+# ==============================================================================
+# .gitattributes for PetroLaplace Reservoir Core
+# ==============================================================================
+
+# Set default behavior to automatically normalize line endings
+* text=auto eol=lf
+
+# Force scripts and batch files to have appropriate line endings
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.sh  text eol=lf
+
+# Explicit binary files (do not touch line endings or diff)
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.ico binary
+*.mltbx binary
+*.mlx binary
+*.mlapp binary
+*.mat binary
+*.fig binary
+*.dll binary
+*.so binary
+*.dylib binary
+*.mex* binary
+*.zip binary

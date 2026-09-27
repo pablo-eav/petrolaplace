@@ -1,0 +1,40 @@
+name: MATLAB Toolbox CI/CD
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  release:
+    types: [ published ]
+
+jobs:
+  test-and-package:
+    name: Run MATLAB Tests & Package Toolbox
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up MATLAB
+        uses: matlab-actions/setup-matlab@v2
+        with:
+          release: R2023b
+
+      - name: Run Unit Tests
+        uses: matlab-actions/run-tests@v2
+        with:
+          test-results-junit: test-results/results.xml
+          code-coverage-cobertura: code-coverage/coverage.xml
+          select-by-folder: tests
+
+      - name: Package MATLAB Toolbox (.mltbx)
+        uses: matlab-actions/run-command@v2
+        with:
+          command: build_mltbx
+
+      - name: Upload .mltbx Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: PetroLaplace_Reservoir_Core_Toolbox
+          path: PetroLaplace_Reservoir_Core.mltbx

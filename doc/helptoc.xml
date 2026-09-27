@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding="utf-8"?>
+<toc version="2.0">
+    <tocitem target="getting_started.html">PetroLaplace™ Reservoir Core
+        <tocitem target="getting_started.html#overview">Overview &amp; Features</tocitem>
+        <tocitem target="getting_started.html#quickstart">Quick Start &amp; Basic Usage</tocitem>
+        <tocitem target="getting_started.html#functions">Toolbox Functions</tocitem>
+        <tocitem target="getting_started.html#benchmarks">SPE Field Benchmarks</tocitem>
+        <tocitem target="getting_started.html#mex">Compiling High-Speed MEX</tocitem>
+    </tocitem>
+</toc>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Getting Started with PetroLaplace™ Reservoir Core</title>
+    <style>
+        body { font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #222; max-width: 900px; margin: 30px auto; padding: 0 20px; }
+        h1 { color: #005a9c; border-bottom: 2px solid #005a9c; padding-bottom: 8px; }
+        h2 { color: #1e3a8a; margin-top: 28px; border-bottom: 1px solid #ddd; padding-bottom: 4px; }
+        h3 { color: #2563eb; }
+        pre, code { font-family: Consolas, "Courier New", monospace; background-color: #f4f6f8; }
+        pre { padding: 14px; border-radius: 6px; border-left: 4px solid #005a9c; overflow-x: auto; }
+        code { padding: 2px 5px; border-radius: 3px; }
+        table { border-collapse: collapse; width: 100%; margin: 18px 0; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 12px; text-align: left; }
+        th { background-color: #005a9c; color: white; }
+        tr:nth-child(even) { background-color: #f9fafb; }
+        .badge { display: inline-block; background: #0284c7; color: white; padding: 3px 8px; border-radius: 12px; font-size: 0.85em; font-weight: bold; }
+        .callout { background: #e0f2fe; border-left: 5px solid #0284c7; padding: 12px 18px; margin: 16px 0; border-radius: 4px; }
+    </style>
+</head>
+<body>
+
+<h1>PetroLaplace™ Reservoir Core <span class="badge">v1.0.0</span></h1>
+<p><strong>Advanced Well Test Analysis &amp; Non-Iterative Deconvolution Toolbox for MATLAB</strong></p>
+
+<div class="callout">
+    <strong>Key Breakthrough:</strong> Eliminates Stehfest numerical divergence and Runge ringing in complex reservoir transient models (dual-porosity, shale multi-fractured horizontal wells, variable rate deconvolution) using root-free conformal Talbot integration.
+</div>
+
+<h2 id="overview">Overview &amp; Features</h2>
+<ul>
+    <li><strong>Root-Free Conformal Talbot Integration:</strong> Continuous Laplace inversion with infinitesimal complex step Bourdet derivative without finite-difference noise.</li>
+    <li><strong>Non-Iterative Toeplitz-Tikhonov Deconvolution:</strong> Reconstructs constant-rate drawdown response from multi-rate erratic production history in &lt; 2 ms.</li>
+    <li><strong>High-Speed Native C99 Engine:</strong> Optional MEX acceleration compiled directly from C99 MISRA compliant code. Vectorized MATLAB fallback included.</li>
+    <li><strong>Pre-built Reservoir Models:</strong> Radial storage and skin ($C_D, S$), Warren-Root dual-porosity carbonate ($\omega, \lambda$), Trilinear shale multi-fracture ($x_f, k_{SRV}$).</li>
+</ul>
+
+<h2 id="quickstart">Quick Start</h2>
+<p>Add the toolbox to your MATLAB path:</p>
+<pre><code>% Run the startup script
+run('start_toolbox.m');
+
+% Or call functions directly using the namespace:
+import petrolaplace.*
+</code></pre>
+
+<h3>Example 1: Inverting Laplace Model with Bourdet Derivative</h3>
+<pre><code>t = logspace(-2, 4, 100);
+F_s = @(s) petrolaplace.model_radial_storage_skin(s, 1e3, 2.5);
+
+% Invert Laplace and compute Bourdet derivative simultaneously
+[pD, dpD] = petrolaplace.invert_laplace(F_s, t);
+
+figure('Color','w');
+loglog(t, pD, 'b-', 'LineWidth', 2); hold on;
+loglog(t, dpD, 'r-', 'LineWidth', 2); grid on;
+xlabel('Dimensionless Time t_D');
+ylabel('Dimensionless Pressure &amp; Derivative');
+legend('p_D (Pressure)', 't_D * p_D'' (Bourdet Derivative)', 'Location', 'northwest');
+title('PetroLaplace: Bourdet Storage &amp; Skin Diagnostic Match');
+</code></pre>
+
+<h2 id="functions">Toolbox Functions</h2>
+<table>
+    <tr>
+        <th>Function</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td><code>petrolaplace.invert_laplace(F_s, t, N)</code></td>
+        <td>Computes $f(t)$ and continuous $t \cdot f'(t)$ via conformal Talbot contour.</td>
+    </tr>
+    <tr>
+        <td><code>petrolaplace.deconvolve(t, p, q, lambda)</code></td>
+        <td>Non-iterative Tikhonov deconvolution converting variable-rate $p(t)$ to constant-rate response.</td>
+    </tr>
+    <tr>
+        <td><code>petrolaplace.bourdet_derivative(t, p, L)</code></td>
+        <td>Continuous Bourdet logarithmic derivative with configurable $L$-factor windowing.</td>
+    </tr>
+    <tr>
+        <td><code>petrolaplace.analyze_well(data_source, props)</code></td>
+        <td>Automated end-to-end PTA pipeline: diagnostics, storage/skin, dual-porosity, and report.</td>
+    </tr>
+    <tr>
+        <td><code>petrolaplace.model_radial_storage_skin(s, CD, S)</code></td>
+        <td>Laplace-space reservoir model for homogeneous radial flow with wellbore storage and skin.</td>
+    </tr>
+</table>
+
+<h2 id="benchmarks">SPE Field Benchmarks</h2>
+<p>The toolbox includes verified benchmark scripts replicating published Society of Petroleum Engineers (SPE) field cases:</p>
+<ul>
+    <li><code>examples/ex01_bourdet_storage_skin.m</code>: Homogeneous storage and skin match vs Stehfest.</li>
+    <li><code>examples/ex02_warren_root_carbonate.m</code>: Naturally fractured carbonate reservoir.</li>
+    <li><code>examples/ex03_shale_horizontal_mfhw.m</code>: Multi-fractured horizontal well in tight shale ($m = 0.5$ half-slope).</li>
+    <li><code>examples/ex04_multirate_deconvolution.m</code>: Multi-rate erratic flow deconvolution with gauge noise.</li>
+</ul>
+
+<h2 id="mex">Compiling High-Speed MEX</h2>
+<p>To compile the native C99 computational engine for sub-millisecond execution:</p>
+<pre><code>build_mex
+</code></pre>
+<p>This compiles <code>mex_root_free_reservoir.c</code> and <code>src/root_free_reservoir_core.c</code> into <code>mex_root_free_reservoir.mexw64</code> (or <code>.mexmaca64</code>, <code>.mexa64</code>).</p>
+
+<p style="text-align: center; color: #666; margin-top: 40px; font-size: 0.9em;">
+    © 2026 Pablo Enrique Aballe &amp; PetroLaplace Contributors. Dual licensed for academic and commercial use.
+</p>
+
+</body>
+</html>
