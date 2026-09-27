@@ -248,7 +248,7 @@ PetroLaplace™ Reservoir Core implements enterprise-grade multi-layer protectio
 PetroLaplace™ includes an **automatic 30-day full-featured evaluation trial** upon installation.
 
 To acquire an annual subscription or perpetual license key, visit the official store:
-👉 **[PetroLaplace Official Store (Lemon Squeezy)](https://rootfreelaplace.lemonsqueezy.com)**
+👉 **[PetroLaplace Official Checkout Store (Lemon Squeezy)](https://rootfreelaplace.lemonsqueezy.com/checkout/buy/33ca1d55-54e1-46fb-85db-4e140b8625c8?media=0)**
 
 ### Licensing Plans & Tiers
 

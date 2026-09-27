@@ -117,7 +117,8 @@ classdef LicenseManager
             fprintf(' Estado : %s\n', lic_info.message);
             fprintf(' Su Host ID para solicitar activación: %s\n\n', petrolaplace.LicenseManager.get_host_id());
             fprintf(' Para desbloquear el acceso permanente sin restricciones:\n');
-            fprintf('   1. Adquiera su clave de licencia en: https://mathworks.com/products/connections\n');
+            fprintf('   1. Adquiera su clave de licencia en:\n');
+            fprintf('         https://rootfreelaplace.lemonsqueezy.com/checkout/buy/33ca1d55-54e1-46fb-85db-4e140b8625c8?media=0\n');
             fprintf('   2. Active la toolbox ejecutando:\n');
             fprintf('         >> petrolaplace.activate(''SU-CLAVE-DE-PRODUCTO'')\n');
             fprintf('===============================================================================\n\n');
