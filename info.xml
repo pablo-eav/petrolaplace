@@ -1,7 +1,7 @@
-<info>
-    <matlabrelease>R2020a</matlabrelease>
+<productinfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <matlabrelease>R2024b</matlabrelease>
     <name>PetroLaplace Reservoir Core</name>
     <type>toolbox</type>
     <icon>doc/toolbox_icon.png</icon>
     <help_location>doc</help_location>
-</info>
+</productinfo>
