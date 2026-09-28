@@ -328,10 +328,13 @@ classdef LicenseManager
         function [valid, tier, exp_date] = validate_key_format(key)
             % Formato: PETRO-[TIER]-[CHECKSUM]
             valid = false; tier = 'INVALID'; exp_date = '2099-12-31';
-            if startsWith(key, 'PETRO-PRO-') || startsWith(key, 'PETRO-COMMERCIAL-')
+            if startsWith(key, 'PETRO-CORP-') || startsWith(key, 'PETRO-ENTERPRISE-')
+                tier = 'ENTERPRISE';
+                valid = true;
+            elseif startsWith(key, 'PETRO-PRO-') || startsWith(key, 'PETRO-COMMERCIAL-')
                 tier = 'PRO_PERPETUAL';
                 valid = true;
-            elseif startsWith(key, 'PETRO-ACAD-')
+            elseif startsWith(key, 'PETRO-CAMPUS-') || startsWith(key, 'PETRO-ACAD-')
                 tier = 'ACADEMIC_RESEARCH';
                 valid = true;
             elseif startsWith(key, 'PETRO-STUD-')
